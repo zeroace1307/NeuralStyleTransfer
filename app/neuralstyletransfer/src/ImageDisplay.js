@@ -5,12 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 function ImageDisplay(props) {
   const [image, setImage] = useState(null);
 
-  const handleImageUpload = (event) => {
+  const handleUpload = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
-    reader.onload = () => {
-      setImage(reader.result);
-    };
+    reader.onload = () => setImage(reader.result);
     reader.readAsDataURL(file);
   };
 
